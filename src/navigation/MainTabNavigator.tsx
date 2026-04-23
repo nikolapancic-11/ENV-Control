@@ -5,14 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../constants/theme';
 import { MainTabParamList } from './types';
 import DashboardScreen from '../screens/DashboardScreen';
-
-function ManualEntryScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>New Entry</Text>
-    </View>
-  );
-}
+import ManualEntryScreen from '../screens/ManualEntryScreen';
 
 function FileUploadScreen() {
   return (
