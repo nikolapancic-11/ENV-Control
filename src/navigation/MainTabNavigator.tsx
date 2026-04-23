@@ -7,14 +7,7 @@ import { MainTabParamList } from './types';
 import DashboardScreen from '../screens/DashboardScreen';
 import ManualEntryScreen from '../screens/ManualEntryScreen';
 import FileUploadScreen from '../screens/FileUploadScreen';
-
-function HistoryScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>History</Text>
-    </View>
-  );
-}
+import HistoryScreen from '../screens/HistoryScreen';
 
 function SettingsScreen() {
   return (
