@@ -4,15 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../constants/theme';
 import { MainTabParamList } from './types';
-
-// Placeholder screens
-function DashboardScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>Dashboard</Text>
-    </View>
-  );
-}
+import DashboardScreen from '../screens/DashboardScreen';
 
 function ManualEntryScreen() {
   return (
