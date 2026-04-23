@@ -1,31 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Colors, Typography } from './src/constants/theme';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import RootNavigator from './src/navigation/RootNavigator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>ENV-Control</Text>
-      <Text style={styles.subtitle}>Sustainability Emissions Tracker</Text>
+    <SafeAreaProvider>
+      <RootNavigator />
       <StatusBar style="light" />
-    </View>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    ...Typography.h1,
-    color: Colors.textLight,
-    marginBottom: 8,
-  },
-  subtitle: {
-    ...Typography.subtitle,
-    color: Colors.secondaryLight,
-  },
-});
