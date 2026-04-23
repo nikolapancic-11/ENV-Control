@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Colors, Typography } from './src/constants/theme';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>ENV-Control</Text>
+      <Text style={styles.subtitle}>Sustainability Emissions Tracker</Text>
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -13,8 +15,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    ...Typography.h1,
+    color: Colors.textLight,
+    marginBottom: 8,
+  },
+  subtitle: {
+    ...Typography.subtitle,
+    color: Colors.secondaryLight,
   },
 });
