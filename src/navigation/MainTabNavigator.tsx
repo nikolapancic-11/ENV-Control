@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../constants/theme';
@@ -8,14 +7,7 @@ import DashboardScreen from '../screens/DashboardScreen';
 import ManualEntryScreen from '../screens/ManualEntryScreen';
 import FileUploadScreen from '../screens/FileUploadScreen';
 import HistoryScreen from '../screens/HistoryScreen';
-
-function SettingsScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>Settings</Text>
-    </View>
-  );
-}
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -104,16 +96,3 @@ export default function MainTabNavigator() {
     </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  screenText: {
-    fontSize: 18,
-    color: Colors.textSecondary,
-  },
-});
