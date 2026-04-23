@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState, useCallback } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Colors } from '../constants/theme';
 import { RootStackParamList } from './types';
 import MainTabNavigator from './MainTabNavigator';
-
-// Placeholder login screen
-function LoginScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>Login</Text>
-    </View>
-  );
-}
+import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RootNavigator() {
-  const [isAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLoginSuccess = useCallback(() => {
+    setIsAuthenticated(true);
+  }, []);
 
   return (
     <NavigationContainer>
@@ -26,23 +20,11 @@ export default function RootNavigator() {
         {isAuthenticated ? (
           <Stack.Screen name="Main" component={MainTabNavigator} />
         ) : (
-          <Stack.Screen name="Auth" component={LoginScreen} />
+          <Stack.Screen name="Auth">
+            {() => <LoginScreen onLoginSuccess={handleLoginSuccess} />}
+          </Stack.Screen>
         )}
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: Colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  screenText: {
-    fontSize: 24,
-    color: Colors.white,
-    fontWeight: '600',
-  },
-});
