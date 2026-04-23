@@ -6,14 +6,7 @@ import { Colors } from '../constants/theme';
 import { MainTabParamList } from './types';
 import DashboardScreen from '../screens/DashboardScreen';
 import ManualEntryScreen from '../screens/ManualEntryScreen';
-
-function FileUploadScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.screenText}>Upload</Text>
-    </View>
-  );
-}
+import FileUploadScreen from '../screens/FileUploadScreen';
 
 function HistoryScreen() {
   return (
